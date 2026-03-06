@@ -5,9 +5,9 @@ subSin.addEventListener('click' ,async (e)=>{
     const username = document.querySelector('.name').value;
     const email = document.querySelector('.email').value;
     const password = document.querySelector('.password').value;
-    
+
     const registerForm = document.querySelector('.sign-up');
-    
+
     try {
         const backend = 'http://localhost:3000/auth/register';
         const response = await fetch(backend , {
@@ -52,13 +52,13 @@ subSin.addEventListener('click' ,async (e)=>{
         existingDivs.forEach(existingDiv => {
             existingDiv.textContent ='';
         });
-        
+
         const errorDiv = formElement.querySelector('.error');
         if (errorDiv) {
             errorDiv.textContent = errorMassage;
             errorDiv.style.display = 'block'
         }
-       
+
    }
 
 const subLog = document.querySelector('.sub-log');
@@ -68,6 +68,8 @@ subLog.addEventListener('click' ,async (e)=>{
     const email = document.querySelector('.email-log').value;
     const password = document.querySelector('.password-log').value;
     const backend = 'http://localhost:3000/auth/login';
+
+    const loginForm = document.querySelector('.login');
 
     try{
     const response = await fetch(backend , {
@@ -80,8 +82,6 @@ subLog.addEventListener('click' ,async (e)=>{
         password : password
     })
     })
-
-    const loginForm = document.querySelector('.login');
     if(response.status === 200){
         // Login successful, redirect to user-auth.html
         window.location.href = '/user-auth.html';
@@ -104,7 +104,7 @@ subLog.addEventListener('click' ,async (e)=>{
     const errorMassage = 'Network error. Please check your connection and try again.';
     removeBefore(errorMassage, loginForm);
     }
-    
+
 })
  function  activeForm(formID){
     document.querySelectorAll('.active').forEach(form=>{
@@ -118,7 +118,7 @@ subLog.addEventListener('click' ,async (e)=>{
 document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const formType = urlParams.get('form');
-    
+
     if (formType === 'signup') {
         // Small delay to ensure DOM is fully loaded
         setTimeout(() => {

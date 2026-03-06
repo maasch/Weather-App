@@ -9,5 +9,6 @@
   "editor.parameterHints.enabled": false,
   "editor.inlineSuggest.enabled": false,
   "typescript.suggest.enabled": false,
-  "javascript.suggest.enabled": false
+  "javascript.suggest.enabled": false,
+  "liveServer.settings.port": 5501
 }
